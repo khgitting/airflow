@@ -3605,7 +3605,7 @@ class SchedulerJobTest(unittest.TestCase):
 
         expected_run_duration = 5
         start_time = timezone.utcnow()
-        scheduler = SchedulerJob(dag_id,
+        scheduler = SchedulerJob(dag_id, executor=TestExecutor(do_update=False),
                                  run_duration=expected_run_duration)
         scheduler.run()
         end_time = timezone.utcnow()
