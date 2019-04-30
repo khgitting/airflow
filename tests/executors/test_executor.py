@@ -72,7 +72,7 @@ class TestExecutor(BaseExecutor):
         self.sync()
 
     def change_state(self, key, state):
-        super().change_state(key, state)
+        super(TestExecutor, self).change_state(key, state)
         # The normal event buffer is cleared after reading, we want to keep
         # a list of all events for testing
         self.sorted_tasks.append((key, state))
